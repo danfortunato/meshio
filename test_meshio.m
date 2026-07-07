@@ -1,5 +1,10 @@
 fprintf('=== Testing meshio ===\n');
 
+if ~exist('dictionary', 'builtin') && ~exist('dictionary', 'class')
+    fprintf('=== Skipping meshio tests: dictionary class is not supported in this MATLAB version ===\n');
+    return
+end
+
 here     = fileparts(mfilename('fullpath'));
 testsDir = fullfile(here, 'tests');
 
