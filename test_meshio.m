@@ -1,6 +1,6 @@
 fprintf('=== Testing meshio ===\n');
 
-if ~exist('dictionary', 'builtin') && ~exist('dictionary', 'class')
+if ~exist('configureDictionary', 'builtin')
     fprintf('=== Skipping meshio tests: dictionary class is not supported in this MATLAB version ===\n');
     return
 end
