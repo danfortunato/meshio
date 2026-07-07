@@ -1,0 +1,13 @@
+name: meshio
+description: "meshio for MATLAB — read and write unstructured mesh files."
+license: "MIT"
+homepage: "https://github.com/danfortunato/meshio"
+repository: "https://github.com/danfortunato/meshio"
+
+paths:
+  - path: "."
+
+test_script: test_meshio.m
+
+builds:
+  - architectures: [any]
