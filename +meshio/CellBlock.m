@@ -44,6 +44,15 @@ classdef CellBlock
         end
 
         function disp(obj)
+            if ~isscalar(obj)
+                sz = strjoin(string(size(obj)), "x");
+                fprintf("  %s meshio.CellBlock array:\n", sz);
+                for i = 1:numel(obj)
+                    fprintf("    (%d) type: %s, num cells: %d, tags: [%s]\n", ...
+                        i, obj(i).type, obj(i).len(), strjoin(obj(i).tags, ", "));
+                end
+                return
+            end
             items = sprintf("type: %s, num cells: %d, tags: [%s]", ...
                 obj.type, obj.len(), strjoin(obj.tags, ", "));
             fprintf("<meshio CellBlock, %s>\n", items);
